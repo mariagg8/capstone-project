@@ -2,7 +2,7 @@ import create from 'zustand';
 
 const useStore = create(set => ({
   fetchedData: { results: [] },
-  fetchSomething: async url => {
+  fetchApi: async url => {
     try {
       const response = await fetch(url);
       const data = await response.json();

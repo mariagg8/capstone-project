@@ -2,49 +2,53 @@ import useStore from '../hooks/useStore';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
-export default function BooksCard() {
-  const fetchSomething = useStore(state => state.fetchSomething);
+const Api = process.env.NEXT_PUBLIC_REACT_APP_API_KEY;
+
+export default function BooksCard({ apikey }) {
+  const fetchApi = useStore(state => state.fetchApi);
   const fetchedData = useStore(state => state.fetchedData);
 
   useEffect(() => {
-    fetchSomething(
-      'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=K4DmlcZgA9tX4XL9GpN53d9u1JbR42rv'
+    fetchApi(
+      `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apikey}`
     );
-  }, [fetchSomething]);
-  //console.log(fetchedData);
+  }, [fetchApi]);
+  console.log(Api);
   return (
     <CardWrapper>
-      <section>
-        {fetchedData.results.books !== undefined ? (
-          fetchedData.results.books.map((book, index) => {
-            return (
-              <StyledCard>
-                <article key={index}>
-                  <img src={book.book_image} style={{ width: '40%' }} />
-                  <h3>{book.title}</h3>
-                  <p>{book.author}</p>
-                  <p>{book.description}</p>
-                </article>
-              </StyledCard>
-            );
-          })
-        ) : (
-          <article>loading</article>
-        )}
-      </section>
+      {fetchedData.results.books !== undefined ? (
+        fetchedData.results.books.map((book, index) => {
+          return (
+            <StyledCard>
+              <article key={index}>
+                <img src={book.book_image}></img>
+                <h3>{book.title}</h3>
+                <p>{book.author}</p>
+                <p>{book.description}</p>
+              </article>
+            </StyledCard>
+          );
+        })
+      ) : (
+        <article>loading</article>
+      )}
     </CardWrapper>
   );
 }
 
-const StyledCard = styled.div`
-  background-color: #eaecf2;
-  width: 250px;
-  height: 250px;
-  border-radius: 30px;
+const StyledCard = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #bbd1e1;
+  //margin: 10px;
+  padding: 30px;
+  text-align: justify;
+  border-radius: 25px;
 `;
 
-const CardWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+const CardWrapper = styled.section`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
 `;
