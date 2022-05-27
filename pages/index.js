@@ -14,7 +14,7 @@ export default function Home({ API_KEY }) {
   console.log(API_KEY);
   return (
     <>
-      <h1>My Book App .</h1>
+      <h1>My Book App </h1>
       <BooksCard apikey={API_KEY}></BooksCard>
     </>
   );
