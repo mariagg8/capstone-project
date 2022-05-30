@@ -11,7 +11,6 @@ export function getServerSideProps() {
 }
 
 export default function Home({ API_KEY }) {
-  console.log(API_KEY);
   return (
     <>
       <h1>My Book App </h1>
