@@ -48,8 +48,7 @@ const StyledCard = styled.article`
 
 const CardWrapper = styled.section`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-columns: auto-fit;
-  align-items: center;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 20px;
+  justify-content: center;
 `;
