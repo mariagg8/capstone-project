@@ -44,11 +44,11 @@ const StyledCard = styled.article`
   padding: 30px;
   text-align: justify;
   border-radius: 25px;
+  justify-content: center;
 `;
 
 const CardWrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 20px;
-  justify-content: center;
 `;
