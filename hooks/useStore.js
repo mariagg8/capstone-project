@@ -8,7 +8,7 @@ const useStore = create(set => ({
       const data = await response.json();
       set({ fetchedData: data });
     } catch (error) {
-      console.error(`Upps das war ein Fehler: ${error}`);
+      console.error(`Error: ${error}`);
     }
   },
 }));

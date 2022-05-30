@@ -13,14 +13,14 @@ export default function BooksCard({ apikey }) {
       `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apikey}`
     );
   }, [fetchApi]);
-  console.log(Api);
+
   return (
     <CardWrapper>
-      {fetchedData.results.books !== undefined ? (
+      {fetchedData?.results?.books !== undefined ? (
         fetchedData.results.books.map((book, index) => {
           return (
-            <StyledCard>
-              <article key={index}>
+            <StyledCard key={index}>
+              <article>
                 <img src={book.book_image}></img>
                 <h3>{book.title}</h3>
                 <p>{book.author}</p>
@@ -41,7 +41,6 @@ const StyledCard = styled.article`
   flex-direction: column;
   align-items: center;
   background-color: #bbd1e1;
-  //margin: 10px;
   padding: 30px;
   text-align: justify;
   border-radius: 25px;
@@ -49,6 +48,8 @@ const StyledCard = styled.article`
 
 const CardWrapper = styled.section`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto-fit;
+  align-items: center;
   gap: 40px;
 `;
