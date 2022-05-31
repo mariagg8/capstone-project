@@ -2,8 +2,6 @@ import useStore from '../hooks/useStore';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
-const Api = process.env.NEXT_PUBLIC_REACT_APP_API_KEY;
-
 export default function BooksCard({ apikey }) {
   const fetchApi = useStore(state => state.fetchApi);
   const fetchedData = useStore(state => state.fetchedData);
@@ -17,14 +15,13 @@ export default function BooksCard({ apikey }) {
   return (
     <CardWrapper>
       {fetchedData?.results?.books !== undefined ? (
-        fetchedData.results.books.map((book, index) => {
+        fetchedData.results.books.map(book => {
           return (
-            <StyledCard key={index}>
+            <StyledCard key={book.book_uri}>
               <article>
-                <img src={book.book_image}></img>
+                <Styledimage src={book.book_image} />
                 <h3>{book.title}</h3>
                 <p>{book.author}</p>
-                <p>{book.description}</p>
               </article>
             </StyledCard>
           );
@@ -44,14 +41,14 @@ const StyledCard = styled.article`
   padding: 20px;
   text-align: justify;
   border-radius: 25px;
-  justify-content: center;
 `;
 
 const CardWrapper = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 20px;
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr 1fr;
-  }
+`;
+
+const Styledimage = styled.img`
+  width: 100%;
 `;

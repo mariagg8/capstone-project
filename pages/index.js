@@ -12,7 +12,7 @@ export default function Home({ API_KEY }) {
   return (
     <>
       <h1>My Book App </h1>
-      <BooksCard apikey={API_KEY}></BooksCard>
+      <BooksCard apikey={API_KEY} />
     </>
   );
 }
