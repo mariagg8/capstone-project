@@ -41,7 +41,7 @@ const StyledCard = styled.article`
   flex-direction: column;
   align-items: center;
   background-color: #bbd1e1;
-  padding: 30px;
+  padding: 20px;
   text-align: justify;
   border-radius: 25px;
   justify-content: center;
@@ -51,4 +51,7 @@ const CardWrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 20px;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
