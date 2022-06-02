@@ -10,7 +10,7 @@ export default function Books() {
 
   //function fetchBook(isbn) {
   // fetch(
-  //  `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apikey}`
+  //  `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=${apikey}&isbn=${isbn}`
   // );
   //}
 
