@@ -5,21 +5,22 @@ import Link from 'next/link';
 
 export default function Books() {
   const { query } = useRouter();
-  const fetchedData = useStore(state => state.fetchedData);
   const [book, setBook] = useState(null);
-
-  //function fetchBook(isbn) {
-  // fetch(
-  //  `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=${apikey}&isbn=${isbn}`
-  // );
-  //}
-
+  const isbn = query.isbn;
   useEffect(() => {
-    const book = fetchedData?.results?.books?.find(
-      book_ => book_.primary_isbn10 === query.isbn
-    );
-    setBook(book);
-  }, [query]);
+    if (isbn) {
+      fetch(
+        `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.NEXT_PUBLIC_REACT_APP_API_KEY}&isbn=${isbn}`
+      )
+        .then(response => response.json())
+        .then(data => {
+          const book = data.results.books.find(
+            book_ => book_.primary_isbn13 === isbn
+          );
+          setBook(book);
+        });
+    }
+  }, [isbn]);
 
   return (
     <div>
