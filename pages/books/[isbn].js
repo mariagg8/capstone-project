@@ -21,13 +21,10 @@ export default function Books() {
     setBook(book);
   }, [query]);
 
-  //console.log(fetchedData);
-  //return null;
-
   return (
     <div>
       <Link href="/">Back</Link>
-      <img src={book?.book_image} />
+      <img src={book?.book_image} alt="book cover" />
       <h1>Book id:{query.isbn}</h1>
       <h1>Rank: {book?.rank}</h1>
       <h2>Title: {book?.title}</h2>
