@@ -1,6 +1,8 @@
 import useStore from '../hooks/useStore';
 import { useEffect } from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+//import ButtonCard from './buttonCard';
 
 export default function BooksCard({ apikey }) {
   const fetchApi = useStore(state => state.fetchApi);
@@ -8,7 +10,7 @@ export default function BooksCard({ apikey }) {
 
   useEffect(() => {
     fetchApi(
-      `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apikey}`
+      `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.NEXT_PUBLIC_REACT_APP_API_KEY}`
     );
   }, [fetchApi]);
 
@@ -17,13 +19,16 @@ export default function BooksCard({ apikey }) {
       {fetchedData?.results?.books !== undefined ? (
         fetchedData.results.books.map(book => {
           return (
-            <StyledCard key={book.book_uri}>
+            <StyledCard key={book.primary_isbn10}>
               <StyledBookCover>
                 <Styledimage src={book.book_image} />
               </StyledBookCover>
               <div>
                 <h3>{book.title}</h3>
                 <p>{book.author}</p>
+                <Link href={`/books/${book.primary_isbn13}`}>
+                  <a>More details → </a>
+                </Link>
               </div>
             </StyledCard>
           );
