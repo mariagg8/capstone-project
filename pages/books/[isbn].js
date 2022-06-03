@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import useStore from '../../hooks/useStore';
 import Link from 'next/link';
+import styled from 'styled-components';
 
 export default function Books() {
   const { query } = useRouter();
@@ -23,14 +23,22 @@ export default function Books() {
   }, [isbn]);
 
   return (
-    <div>
-      <Link href="/">Back</Link>
-      <img src={book?.book_image} alt="book cover" />
-      <h1>Book id:{query.isbn}</h1>
-      <h1>Rank: {book?.rank}</h1>
-      <h2>Title: {book?.title}</h2>
+    <StyledCard>
+      <Link passHref href="/">
+        <a>← Back</a>
+      </Link>
+      <img src={book?.book_image} alt="book cover" width="350px" />
+      <h1>Title: {book?.title}</h1>
       <h3>Author: {book?.author}</h3>
+      <p>Rank: {book?.rank}</p>
+      <p>Book id:{query.isbn}</p>
       <p>Description: {book?.description}</p>
-    </div>
+    </StyledCard>
   );
 }
+
+const StyledCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

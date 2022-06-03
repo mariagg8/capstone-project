@@ -2,7 +2,7 @@ import useStore from '../hooks/useStore';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import ButtonCard from './buttonCard';
+//import ButtonCard from './buttonCard';
 
 export default function BooksCard({ apikey }) {
   const fetchApi = useStore(state => state.fetchApi);
@@ -27,7 +27,7 @@ export default function BooksCard({ apikey }) {
                 <h3>{book.title}</h3>
                 <p>{book.author}</p>
                 <Link href={`/books/${book.primary_isbn13}`}>
-                  <button>More details</button>
+                  <a>More details → </a>
                 </Link>
               </div>
             </StyledCard>
