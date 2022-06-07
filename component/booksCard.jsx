@@ -6,8 +6,8 @@ import Link from 'next/link';
 export default function BooksCard({ apikey }) {
   const fetchApi = useStore(state => state.fetchApi);
   const fetchedData = useStore(state => state.fetchedData);
-  //const addToWishList = useStore(state => state.addToWishList);
-
+  const addToWishList = useStore(state => state.addToWishList);
+  const wishList = useStore(state => state.wishList);
   useEffect(() => {
     fetchApi(
       `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.NEXT_PUBLIC_REACT_APP_API_KEY}`
@@ -18,6 +18,8 @@ export default function BooksCard({ apikey }) {
     <CardWrapper>
       {fetchedData?.results?.books !== undefined ? (
         fetchedData.results.books.map(book => {
+          const isinwishlist = wishList.includes(book.primary_isbn13);
+
           return (
             <StyledCard key={book.primary_isbn10}>
               <StyledBookCover>
@@ -30,7 +32,23 @@ export default function BooksCard({ apikey }) {
                   <a>More details → </a>
                 </Link>
 
-                {/*<button onClick={addToWishList}>Add to Wish List</button>*/}
+                {isinwishlist ? (
+                  <button
+                    onClick={() => {
+                      //implement remove here
+                    }}
+                  >
+                    Remove from Wishlist
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      addToWishList(book.primary_isbn13);
+                    }}
+                  >
+                    Add to Wish List
+                  </button>
+                )}
               </div>
             </StyledCard>
           );

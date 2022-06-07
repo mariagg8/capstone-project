@@ -11,6 +11,11 @@ const useStore = create(set => ({
       console.error(`Error: ${error}`);
     }
   },
+  wishList: ['9781250278197', '123456'],
+
+  addToWishList: isbn => {
+    console.log(isbn);
+  },
 }));
 
 export default useStore;
