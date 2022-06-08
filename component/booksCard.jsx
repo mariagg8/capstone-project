@@ -21,7 +21,6 @@ export default function BooksCard({ apikey }) {
       {fetchedData?.results?.books !== undefined ? (
         fetchedData.results.books.map(book => {
           const isinwishlist = wishList.includes(book.primary_isbn13);
-          //wishList.filter(book.primary_isbn13);
 
           return (
             <StyledCard key={book.primary_isbn10}>
@@ -38,7 +37,7 @@ export default function BooksCard({ apikey }) {
                 {isinwishlist ? (
                   <button
                     onClick={() => {
-                      //implement remove here
+                      // remove from wishlist
                       deleteFromWishList(book.primary_isbn13);
                     }}
                   >
