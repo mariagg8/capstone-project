@@ -11,9 +11,22 @@ const useStore = create(set => ({
       console.error(`Error: ${error}`);
     }
   },
-  wishList: ['9781250278197', '123456'],
+  wishList: ['9781250278197', '123456', '9781501133572'],
 
   addToWishList: isbn => {
+    set(state => {
+      return {
+        wishList: [isbn],
+      };
+    });
+    //console.log(isbn);
+  },
+  deleteFromWishList: isbn => {
+    //set((state) => {
+    //return {
+    // wishList: state.wishList.filter(isbn)
+    // }
+    // })
     console.log(isbn);
   },
 }));
