@@ -1,5 +1,5 @@
 import BooksCard from '../component/booksCard';
-import SearchBar from '../component/searchBar';
+import { SearchBar } from '../component/searchBar';
 import { useState } from 'react';
 
 export default function Home() {
