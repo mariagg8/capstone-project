@@ -1,15 +1,12 @@
 import create from 'zustand';
 
 const useStore = create(set => ({
-  //booksArray: [],
   fetchedData: { results: [] },
   fetchApi: async url => {
     try {
       const response = await fetch(url);
       const data = await response.json();
       set({ fetchedData: data });
-      //const newBooksArray = fetchedData.results.books;
-      // set({ booksArray: newBooksArray });
     } catch (error) {
       console.error(`Error: ${error}`);
     }
@@ -23,7 +20,6 @@ const useStore = create(set => ({
         wishList: [...state.wishList, isbn],
       };
     });
-    console.log(isbn);
   },
   deleteFromWishList: isbn => {
     set(state => {

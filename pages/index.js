@@ -14,7 +14,6 @@ export default function Home() {
     <>
       <h1>My Book App </h1>
       <SearchBar onSubmit={handleSubmit} />
-      {/*<h1>WishList: {wishList}</h1>*/}
       <BooksCard />
     </>
   );
