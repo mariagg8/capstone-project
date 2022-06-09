@@ -37,7 +37,6 @@ export default function BooksCard({ apikey }) {
                 {isinwishlist ? (
                   <button
                     onClick={() => {
-                      // remove from wishlist
                       deleteFromWishList(book.primary_isbn13);
                     }}
                   >

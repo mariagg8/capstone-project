@@ -23,7 +23,6 @@ const useStore = create(
             wishList: [...state.wishList, isbn],
           };
         });
-        console.log(isbn);
       },
       deleteFromWishList: isbn => {
         set(state => {
@@ -31,12 +30,11 @@ const useStore = create(
             wishList: state.wishList.filter(item => item !== isbn),
           };
         });
-        console.log(isbn);
       },
     }),
     {
-      name: 'book-storage', // name of item in the storage (must be unique)
-      getStorage: () => localStorage, // (optional) by default the 'localStorage' is used
+      name: 'book-storage',
+      getStorage: () => localStorage,
     }
   )
 );
