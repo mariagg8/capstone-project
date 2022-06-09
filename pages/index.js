@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <h1>Best Sellers</h1>
+      <h2>Best Sellers</h2>
       <BooksCard />
     </>
   );
