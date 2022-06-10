@@ -1,9 +1,12 @@
 import BooksCard from '../component/booksCard';
+import Header from '../component/header';
 
 export default function Home() {
   return (
     <>
-      <h1>My Book App </h1>
+
+      <Header />
+      <h2>Best Sellers</h2>
 
       <BooksCard />
     </>
