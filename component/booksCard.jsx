@@ -2,11 +2,13 @@ import useStore from '../hooks/useStore';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-//import ButtonCard from './buttonCard';
 
 export default function BooksCard({ apikey }) {
   const fetchApi = useStore(state => state.fetchApi);
   const fetchedData = useStore(state => state.fetchedData);
+  const addToWishList = useStore(state => state.addToWishList);
+  const wishList = useStore(state => state.wishList);
+  const deleteFromWishList = useStore(state => state.deleteFromWishList);
 
   useEffect(() => {
     fetchApi(
@@ -18,6 +20,8 @@ export default function BooksCard({ apikey }) {
     <CardWrapper>
       {fetchedData?.results?.books !== undefined ? (
         fetchedData.results.books.map(book => {
+          const isinwishlist = wishList.includes(book.primary_isbn13);
+
           return (
             <StyledCard key={book.primary_isbn10}>
               <StyledBookCover>
@@ -29,6 +33,24 @@ export default function BooksCard({ apikey }) {
                 <Link href={`/books/${book.primary_isbn13}`}>
                   <a>More details → </a>
                 </Link>
+
+                {isinwishlist ? (
+                  <button
+                    onClick={() => {
+                      deleteFromWishList(book.primary_isbn13);
+                    }}
+                  >
+                    Remove from Wishlist
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      addToWishList(book.primary_isbn13);
+                    }}
+                  >
+                    Add to Wish List
+                  </button>
+                )}
               </div>
             </StyledCard>
           );
