@@ -12,7 +12,7 @@ export default function Wishlist() {
           const book = fetchedData.results.books.find(
             book_ => book_.primary_isbn13 === bookId
           );
-          //console.log(book);
+
           return (
             <>
               <StyledCard>

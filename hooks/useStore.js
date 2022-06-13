@@ -10,7 +10,6 @@ const useStore = create(
           const response = await fetch(url);
           const data = await response.json();
           set({ fetchedData: data });
-          console.log(data);
         } catch (error) {
           console.error(`Error: ${error}`);
         }
