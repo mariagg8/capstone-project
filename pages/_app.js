@@ -3,6 +3,7 @@ import '../styles/globals.css';
 import { createGlobalStyle } from 'styled-components';
 import useHydration from '../hooks/useHydration';
 import Pre from '../component/Pre';
+import Navbar from '../component/navbar';
 
 function MyApp({ Component, pageProps }) {
   const hydrated = useHydration();
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Component {...pageProps} />;
+      <Navbar />
       <Pre />
     </>
   );
