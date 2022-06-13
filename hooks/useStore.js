@@ -15,7 +15,7 @@ const useStore = create(
         }
       },
 
-      wishList: ['9781250278197', '123456', '9781501133572'],
+      wishList: ['9781250278197', '9781501133572'],
 
       addToWishList: isbn => {
         set(state => {
