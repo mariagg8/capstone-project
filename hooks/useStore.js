@@ -10,12 +10,13 @@ const useStore = create(
           const response = await fetch(url);
           const data = await response.json();
           set({ fetchedData: data });
+          console.log(data);
         } catch (error) {
           console.error(`Error: ${error}`);
         }
       },
 
-      wishList: ['9781250278197', '123456', '9781501133572'],
+      wishList: ['9781250278197', '9781501133572'],
 
       addToWishList: isbn => {
         set(state => {
