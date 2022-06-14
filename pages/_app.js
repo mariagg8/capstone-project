@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
       <GlobalStyle />
       <Component {...pageProps} />;
       <Navbar />
-      <Pre />
+      {/*<Pre />*/}
     </>
   );
 }
@@ -26,7 +26,7 @@ export default MyApp;
 
 const GlobalStyle = createGlobalStyle`
   body {
-    margin: 0;
+    margin: 0px 0px 70px 0;
     padding: 0;
   }
   `;

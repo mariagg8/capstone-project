@@ -27,7 +27,7 @@ const StyledNavbar = styled.div`
   display: flex;
   justify-content: space-around;
   background-color: #bbd1e1;
-  padding: 2rem;
+  padding: 1rem;
   list-style: none;
   color: #223d67;
   font-size: 20px;
