@@ -2,6 +2,7 @@ import useStore from '../hooks/useStore';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { FcNext } from 'react-icons/fc';
 
 export default function BooksCard({ apikey }) {
   const fetchApi = useStore(state => state.fetchApi);
@@ -31,25 +32,27 @@ export default function BooksCard({ apikey }) {
                 <h3>{book.title}</h3>
                 <p>{book.author}</p>
                 <Link href={`/books/${book.primary_isbn13}`}>
-                  <a>More details → </a>
+                  <a>
+                    More details <FcNext />
+                  </a>
                 </Link>
 
                 {isinwishlist ? (
-                  <button
+                  <StyledButton
                     onClick={() => {
                       deleteFromWishList(book.primary_isbn13);
                     }}
                   >
                     Remove from Wishlist
-                  </button>
+                  </StyledButton>
                 ) : (
-                  <button
+                  <StyledButton
                     onClick={() => {
                       addToWishList(book.primary_isbn13);
                     }}
                   >
                     Add to Wish List
-                  </button>
+                  </StyledButton>
                 )}
               </div>
             </StyledCard>
@@ -89,4 +92,14 @@ const Styledimage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+`;
+
+const StyledButton = styled.button`
+  background-color: #4a82c2;
+  height: 2rem;
+  color: white;
+  padding: 10px;
+  //box-shadow: 1px 3px 9px rgba($color: #000000, $alpha: 0.25);
+  border: none;
+  cursor: pointer;
 `;
