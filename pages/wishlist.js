@@ -1,9 +1,15 @@
 import useStore from '../hooks/useStore';
 import styled from 'styled-components';
+//import { useEffect } from 'react';
 
-export default function Wishlist() {
+export default function Wishlist({ url }) {
   const wishList = useStore(state => state.wishList);
   const fetchedData = useStore(state => state.fetchedData);
+  //const fetchApi = useStore(state => state.fetchApi);
+  //useEffect(() => {
+  //fetchApi(url);
+  //}, [fetchApi, url]);
+
   return (
     <div>
       <h2>My Wishlist:</h2>
