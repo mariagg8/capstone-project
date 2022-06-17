@@ -16,8 +16,6 @@ export default function BooksCard({ search, url }) {
       `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.NEXT_PUBLIC_REACT_APP_API_KEY}`
     );
   }, [fetchApi]);
-  // fetchApi(url);
-  //}, [fetchApi, url]);
 
   return (
     <CardWrapper>
