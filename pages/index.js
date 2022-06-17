@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <Header />
+      {/*<Header />*/}
       <h2>Best Sellers</h2>
 
       <SearchBar onSubmit={handleSubmit} />
