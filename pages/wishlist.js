@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export default function Wishlist() {
   const wishList = useStore(state => state.wishList);
   const fetchedData = useStore(state => state.fetchedData);
+
   return (
     <div>
       <h2>My Wishlist:</h2>
