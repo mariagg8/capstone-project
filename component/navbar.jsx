@@ -10,13 +10,25 @@ export default function Navbar() {
     <StyledNavbar>
       <Link passHref href="/">
         <a>
-          <ImHome style={{ color: '#4a82c2', fontSize: '40px' }} />
+          <ImHome
+            style={{
+              color: '#4a82c2',
+              fontSize: '40px',
+              verticalAlign: 'bottom',
+            }}
+          />
           Home
         </a>
       </Link>
       <Link passHref href="/wishlist">
         <a>
-          <BiBookHeart size={'45px'} color="#4a82c2" />
+          <BiBookHeart
+            style={{
+              color: '#4a82c2',
+              fontSize: '40px',
+              verticalAlign: 'bottom',
+            }}
+          />
           {/*<Icon path={mdiNotebookHeartOutline} size={1.7} color="#4a82c2" />*/}
           My Wishlist
         </a>
