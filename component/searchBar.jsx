@@ -24,7 +24,7 @@ export function SearchBar({ onSubmit }) {
           Search
         </StyledButton>
       </StyledSearchbar>
-      <p>You can search for book title and author</p>
+      <StyledText>You can search for book title and author.</StyledText>
     </section>
   );
 }
@@ -56,4 +56,9 @@ const StyledInput = styled.input`
   &:focus {
     outline: none;
   }
+`;
+
+const StyledText = styled.p`
+  margin: 20px;
+  //padding: 10px;
 `;
