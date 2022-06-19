@@ -19,4 +19,7 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
   align-items: center;
+  top: 0;
+  right: 0;
+  left: 0;
 `;

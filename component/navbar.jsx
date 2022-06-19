@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ImHome } from 'react-icons/im';
 import Icon from '@mdi/react';
 import { mdiNotebookHeartOutline } from '@mdi/js';
+import { BiBookHeart } from 'react-icons/bi';
 
 export default function Navbar() {
   return (
@@ -15,7 +16,8 @@ export default function Navbar() {
       </Link>
       <Link passHref href="/wishlist">
         <a>
-          <Icon path={mdiNotebookHeartOutline} size={1.7} color="#4a82c2" />
+          <BiBookHeart size={'45px'} color="#4a82c2" />
+          {/*<Icon path={mdiNotebookHeartOutline} size={1.7} color="#4a82c2" />*/}
           My Wishlist
         </a>
       </Link>

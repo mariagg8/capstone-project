@@ -55,7 +55,7 @@ export default function BooksCard({ search, url }) {
                         deleteFromWishList(book.primary_isbn13);
                       }}
                     >
-                      Remove from Wishlist
+                      Remove
                     </StyledButton>
                   ) : (
                     <StyledButton
@@ -63,7 +63,7 @@ export default function BooksCard({ search, url }) {
                         addToWishList(book.primary_isbn13);
                       }}
                     >
-                      Add to Wish List
+                      Add
                     </StyledButton>
                   )}
                 </div>
@@ -88,6 +88,12 @@ const StyledCard = styled.article`
   background-color: #bbd1e1;
   padding: 20px;
   border-radius: 25px;
+  position: relative;
+  max-width: 350px;
+  a {
+    position: absolute;
+    right: 5px;
+  }
 `;
 
 const CardWrapper = styled.section`
