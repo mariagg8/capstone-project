@@ -15,15 +15,17 @@ export default function Wishlist() {
           );
 
           return (
-            <>
-              <StyledCard>
-                <Cover>
-                  <StyledImage src={book.book_image} />
-                </Cover>
-                <h3 key={bookId}> Title: {book.title}</h3>
-                <h3>{book.author}</h3>
-              </StyledCard>
-            </>
+            book && (
+              <>
+                <StyledCard>
+                  <Cover>
+                    <StyledImage src={book.book_image} />
+                  </Cover>
+                  <h3 key={bookId}> Title: {book.title}</h3>
+                  <h3>{book.author}</h3>
+                </StyledCard>
+              </>
+            )
           );
         })}
       </Wrapper>
