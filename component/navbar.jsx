@@ -1,21 +1,32 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { ImHome } from 'react-icons/im';
-import Icon from '@mdi/react';
-import { mdiNotebookHeartOutline } from '@mdi/js';
+import { BiBookHeart } from 'react-icons/bi';
 
 export default function Navbar() {
   return (
     <StyledNavbar>
       <Link passHref href="/">
         <a>
-          <ImHome style={{ color: '#4a82c2', fontSize: '40px' }} />
+          <ImHome
+            style={{
+              color: '#4a82c2',
+              fontSize: '40px',
+              verticalAlign: 'bottom',
+            }}
+          />
           Home
         </a>
       </Link>
       <Link passHref href="/wishlist">
         <a>
-          <Icon path={mdiNotebookHeartOutline} size={1.7} color="#4a82c2" />
+          <BiBookHeart
+            style={{
+              color: '#4a82c2',
+              fontSize: '40px',
+              verticalAlign: 'bottom',
+            }}
+          />
           My Wishlist
         </a>
       </Link>

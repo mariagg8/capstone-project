@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
 
 export default function Books() {
   const { query } = useRouter();
@@ -25,20 +26,51 @@ export default function Books() {
   return (
     <StyledCard>
       <Link passHref href="/">
-        <a>← Back</a>
+        <a>
+          <BsFillArrowLeftSquareFill
+            style={{ color: '#4a82c2', fontSize: '20px' }}
+          />
+          Back
+        </a>
       </Link>
-      <img src={book?.book_image} alt="book cover" width="350px" />
-      <h1>Title: {book?.title}</h1>
-      <h3>Author: {book?.author}</h3>
-      <p>Rank: {book?.rank}</p>
-      <p>Book id:{query.isbn}</p>
-      <p>Description: {book?.description}</p>
+
+      <StyledCover src={book?.book_image} alt="book cover" width="300px" />
+      <StyleArticle>
+        <h3>Title: {book?.title}</h3>
+        <h3>Author: {book?.author}</h3>
+        <p>
+          <b>Rank:</b> {book?.rank}
+        </p>
+        <p>
+          <b>Book id:</b>
+          {query.isbn}
+        </p>
+        <p>
+          <b>Description:</b> {book?.description}
+        </p>
+      </StyleArticle>
     </StyledCard>
   );
 }
 
 const StyledCard = styled.div`
+  margin-top: 10px;
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: justify;
+`;
+
+const StyledCover = styled.img`
+  border: 2px solid lightgray;
+  padding: 20px;
+  margin: 20px;
+  align-self: center;
+`;
+
+const StyleArticle = styled.div`
+  margin: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f0f0;
+  padding: 10px;
 `;
