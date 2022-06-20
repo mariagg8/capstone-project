@@ -38,9 +38,16 @@ export default function Books() {
       <StyleArticle>
         <h3>Title: {book?.title}</h3>
         <h3>Author: {book?.author}</h3>
-        <p>Rank: {book?.rank}</p>
-        <p>Book id:{query.isbn}</p>
-        <p>Description: {book?.description}</p>
+        <p>
+          <b>Rank:</b> {book?.rank}
+        </p>
+        <p>
+          <b>Book id:</b>
+          {query.isbn}
+        </p>
+        <p>
+          <b>Description:</b> {book?.description}
+        </p>
       </StyleArticle>
     </StyledCard>
   );
@@ -63,8 +70,7 @@ const StyledCover = styled.img`
 
 const StyleArticle = styled.div`
   margin: 20px;
-  // border: 3px solid #f9f9f9;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #e6e6e6;
+  background-color: #f0f0f0;
   padding: 10px;
 `;

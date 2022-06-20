@@ -10,7 +10,7 @@ export default function Wishlist() {
       <h2>My Wishlist:</h2>
       <Wrapper>
         {wishList.map(bookId => {
-          const book = fetchedData.results.books.find(
+          const book = fetchedData.results.books?.find(
             book_ => book_.primary_isbn13 === bookId
           );
 
