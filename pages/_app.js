@@ -31,4 +31,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0px 0px 70px 0;
     padding: 0;
   }
+
+  h2 {
+    margin: 20px;
+  }
   `;

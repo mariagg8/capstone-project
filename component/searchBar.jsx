@@ -60,5 +60,5 @@ const StyledInput = styled.input`
 
 const StyledText = styled.p`
   margin: 20px;
-  //padding: 10px;
+  padding: 10px;
 `;

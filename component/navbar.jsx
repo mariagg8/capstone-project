@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import { ImHome } from 'react-icons/im';
-import Icon from '@mdi/react';
-import { mdiNotebookHeartOutline } from '@mdi/js';
 import { BiBookHeart } from 'react-icons/bi';
 
 export default function Navbar() {
@@ -29,7 +27,6 @@ export default function Navbar() {
               verticalAlign: 'bottom',
             }}
           />
-          {/*<Icon path={mdiNotebookHeartOutline} size={1.7} color="#4a82c2" />*/}
           My Wishlist
         </a>
       </Link>
