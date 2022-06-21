@@ -1,21 +1,14 @@
 import useStore from '../hooks/useStore';
-import { useEffect } from 'react';
+
 import styled from 'styled-components';
 import Link from 'next/link';
 import { FcNext } from 'react-icons/fc';
 
-export default function BooksCard({ search, url }) {
-  const fetchApi = useStore(state => state.fetchApi);
+export default function BooksCard({ search }) {
   const fetchedData = useStore(state => state.fetchedData);
   const addToWishList = useStore(state => state.addToWishList);
   const wishList = useStore(state => state.wishList);
   const deleteFromWishList = useStore(state => state.deleteFromWishList);
-
-  useEffect(() => {
-    fetchApi(
-      `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.NEXT_PUBLIC_REACT_APP_API_KEY}`
-    );
-  }, [fetchApi]);
 
   return (
     <CardWrapper>
