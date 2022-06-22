@@ -45,11 +45,13 @@ export default function Home() {
 const StyledButton = styled.button`
   background-color: #4a82c2;
   height: 2rem;
-  //color: white;
+  color: white;
   padding: 10px;
   box-shadow: 1px 3px 9px rgba($color: #000000, $alpha: 0.25);
   border: none;
-  color: ${({ isActive }) => (isActive ? 'red' : 'white')};
+  &:hover {
+    color: yellow;
+  }
 `;
 
 const StyleButtonWrapper = styled.div`
