@@ -1,6 +1,6 @@
 import useStore from '../hooks/useStore';
 import styled from 'styled-components';
-
+import Categories from '../component/categories';
 export default function Wishlist() {
   const wishList = useStore(state => state.wishList);
   const fetchedData = useStore(state => state.fetchedData);
@@ -8,6 +8,7 @@ export default function Wishlist() {
   return (
     <div>
       <h2>My Wishlist:</h2>
+      <Categories />
       <Wrapper>
         {wishList.map(bookId => {
           const book = fetchedData.results.books?.find(
