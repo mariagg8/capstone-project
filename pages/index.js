@@ -1,10 +1,12 @@
 import BooksCard from '../component/booksCard';
-import Header from '../component/header';
+
 import { SearchBar } from '../component/searchBar';
 import { useState } from 'react';
+import useStore from '../hooks/useStore';
 
 export default function Home() {
   const [search, setSearch] = useState('');
+  const setCategory = useStore(state => state.setCategory);
 
   console.log(search);
   const handleSubmit = inputValue => {
@@ -13,10 +15,27 @@ export default function Home() {
 
   return (
     <>
-      {/*<Header />*/}
       <h2>Best Sellers</h2>
 
       <SearchBar onSubmit={handleSubmit} />
+      <div>
+        <button
+          type="button"
+          onClick={() => {
+            setCategory('fiction');
+          }}
+        >
+          Fiction
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setCategory('nonfiction');
+          }}
+        >
+          nonFiction
+        </button>
+      </div>
       <BooksCard search={search} />
     </>
   );

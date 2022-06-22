@@ -8,11 +8,10 @@ import useStore from '../hooks/useStore';
 function MyApp({ Component, pageProps }) {
   const hydrated = useHydration();
   const fetchApi = useStore(state => state.fetchApi);
+  const category = useStore(state => state.category);
   useEffect(() => {
-    fetchApi(
-      `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.NEXT_PUBLIC_REACT_APP_API_KEY}`
-    );
-  }, [fetchApi]);
+    fetchApi(category);
+  }, [fetchApi, category]);
 
   if (hydrated === false) {
     return null;
