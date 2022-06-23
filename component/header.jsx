@@ -14,7 +14,7 @@ export default function Header() {
 
 const StyledHeader = styled.header`
   background-color: #bbd1e1;
-  padding: 2rem;
+  padding: 10px;
   color: #223d67;
   display: flex;
   flex-direction: row;
@@ -22,4 +22,6 @@ const StyledHeader = styled.header`
   top: 0;
   right: 0;
   left: 0;
+  position: fixed;
+  z-index: 1;
 `;

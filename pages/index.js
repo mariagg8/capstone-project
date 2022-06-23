@@ -1,7 +1,8 @@
 import BooksCard from '../component/booksCard';
-import Header from '../component/header';
+
 import { SearchBar } from '../component/searchBar';
 import { useState } from 'react';
+import Categories from '../component/categories';
 
 export default function Home() {
   const [search, setSearch] = useState('');
@@ -13,8 +14,8 @@ export default function Home() {
 
   return (
     <>
-      {/*<Header />*/}
       <h2>Best Sellers</h2>
+      <Categories />
 
       <SearchBar onSubmit={handleSubmit} />
       <BooksCard search={search} />
