@@ -1,18 +1,13 @@
 import styled from 'styled-components';
 import { FaSwatchbook } from 'react-icons/fa';
-import useStore from '../hooks/useStore';
 
 export default function Header() {
-  {
-    /*const category = useStore(state => state.category);*/
-  }
   return (
     <StyledHeader>
       <h1>
         <FaSwatchbook style={{ color: '#4a82c2', fontSize: '60px' }} /> My Book
         App
       </h1>
-      {/*<h2>{category}</h2>*/}
     </StyledHeader>
   );
 }
