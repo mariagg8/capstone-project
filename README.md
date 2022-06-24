@@ -20,7 +20,7 @@ My book app gives you the last updated list of BestSeller books. Users are able 
 - Api
 - NextJS
 - Styled-Components
-- CSS
+- Local Storage
 - Git
 
 
