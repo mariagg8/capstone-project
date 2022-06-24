@@ -1,34 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+## My Book App - Capstone project
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+ My book app helps you to get inspiration and to keep track of your favorite books. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Description
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+My book app gives you the last updated list of BestSeller books. Users are able to explore or search for a specific book.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Demo
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<img width="250" alt="Screen Shot 2022-06-23 at 14 42 29" src="https://user-images.githubusercontent.com/47370165/175301091-b66ce4e9-6ffa-471e-9fea-1dcb2ed5ace3.png" >   <img width="250" alt="Screen Shot 2022-06-23 at 14 45 05" src="https://user-images.githubusercontent.com/47370165/175301630-a6774cfe-ee88-40bd-8467-e3af61c2fbf3.png">
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Teck Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- React
+- Zustand
+- Api
+- NextJS
+- Styled-Components
+- CSS
+- Git
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
